@@ -4,7 +4,11 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "axios": "^0.25.0",
+    "body-parser": "^1.19.1",
+    "dotenv": "^11.0.0",
     "express": "^4.17.2",
+    "mongoose": "^6.1.6",
     "nodemon": "^2.0.15",
     "ts-node": "^10.4.0"
   },
@@ -14,7 +18,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch-ts": "tsc -w",
-    "watch-node": "nodemon dist/app.js"
+    "watch-node": "nodemon dist/app.js",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript, Node\" -c \"yello.bold, cyan.bold\" \"yarn run watch-ts\" \"yarn run watch-node\"",
+    "start": "ts-node app.ts"
   },
   "author": "",
   "license": "ISC"
