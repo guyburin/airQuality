@@ -24,4 +24,4 @@ export const app: Application = express()
 app.use(bodyParser.json());
 app.use('/', airRouter)
 
-// app.listen(3000)
+app.listen(3000)
